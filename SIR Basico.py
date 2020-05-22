@@ -147,4 +147,4 @@ plt.show()
 
 # fig = px.scatter(x=cuarentena, y=conf_cum)
 # fig.write_html('Conf_cum vs Cuarentena.html', auto_open=True)
-fig.write_html('prueba.html', auto_open=True)
+fig.write_html('index.html', auto_open=True)
