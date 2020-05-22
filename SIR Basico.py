@@ -74,13 +74,11 @@ for i in range(14, len(tasa_recup)):
 
 print(pro_cont_acum)
 print(pro_recup)
-print(r0)
 
 ''' visualizacion '''
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
-
 
 # CSL = plt.imread('CSL LOGO.png')
 # .imread('https://scontent.ftru3-1.fna.fbcdn.net/v/t1.0-9/14729329_1222514917815216_3988353329269364560_n.png?_nc_cat=101&_nc_sid=85a577&_nc_eui2=AeF7tHM08ezc-oAQPZzRcAOxQKxrlWxLIK9ArGuVbEsgrxTwEGSgcEIRu012HBqxQdarfJvc5WkuhPAP0JFNH1F2&_nc_oc=AQmAZxIZlpF1cpws3MdmNA4h0NcYBMBN4zm5O2Pq14B0xydOWRckLyfdHOzO1RS8TdqnGKfBITxrOwZfdOVuRhQr&_nc_ht=scontent.ftru3-1.fna&oh=434b671dade264969e6ba79a35111d9f&oe=5EEB2722')
@@ -137,14 +135,10 @@ fig.add_trace(
 print(recup_dia[10:], act_cum[10:])
 plt.plot(cuarentena[10:], tasa_recup[10:])
 plt.show()
+
+print(r0)
+
 '''
-
-
-
-
-
-
-
 # fig = px.scatter(x=cuarentena, y=conf_cum)
 # fig.write_html('Conf_cum vs Cuarentena.html', auto_open=True)
 fig.write_html('index.html', auto_open=True)
