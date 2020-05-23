@@ -13,25 +13,30 @@ div#general{
 .grid-container {
     display: grid;
     margin: auto;
-    grid-template-columns: 43% 7% 7% 18% 25%;
+    grid-template-columns: 30% 20% 10% 15% 25%;
     grid-template-rows: 190px 233px 234px;
     gap: 0px 0px;
-    grid-template-areas: "tabla logo logo tabla2 tabla2" "grafica1 grafica1 grafica2 grafica2 grafica3" "grafica1 grafica1 grafica4 grafica4 grafica5";
+    grid-template-areas: "tabla1 tabla2 tabla2 logo tabla3" "grafica1 grafica1 grafica2 grafica2 grafica2" "grafica1 grafica1 grafica3 grafica3 grafica3";
 }
 
 div#logo { 
     grid-area: logo; 
-    background-color: black;
+    background-color: rgb(17, 17, 17);
 }
 
-div#tabla { 
-    grid-area: tabla;
+.tabla1 { 
+    grid-area: tabla1;
     background-color: blue; 
 }
 
 .tabla2 { 
     grid-area: tabla2;
     background-color: green;  
+}
+
+.tabla3 { 
+    grid-area: tabla3;
+    background-color: blueviolet; 
 }
 
 div#grafica1 { 
@@ -44,17 +49,7 @@ div#grafica2 {
     background-color: red;  
 }
 
-.grafica3 { 
+div#grafica3 { 
     grid-area: grafica3; 
     background-color: rgb(73, 143, 7);
-}
-
-.grafica4 { 
-    grid-area: grafica4;
-    background-color: blueviolet; 
-}
-
-.grafica5 { 
-    grid-area: grafica5; 
-    background-color: orange;  
 }

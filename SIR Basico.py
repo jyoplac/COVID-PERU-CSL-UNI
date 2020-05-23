@@ -24,9 +24,15 @@ conf_cum = PR_Pos + PM_Pos
 act_cum = conf_cum - (fall_cum + recup_cum)
 
 '''datos diarios'''
+PR_Neg_dia = np.array(data_dia[:, 3], dtype=np.int64)
+PM_Neg_dia = np.array(data_dia[:, 4], dtype=np.int64)
 PR_Pos_dia = np.array(data_dia[:, 5], dtype=np.int64)
 PM_Pos_dia = np.array(data_dia[:, 6], dtype=np.int64)
 recup_dia = np.array(data_dia[:, 8], dtype=np.int64)
+
+PR_total_dia = PR_Pos_dia + PR_Neg_dia
+PM_total_dia = PM_Pos_dia + PM_Neg_dia
+Total_prueba_dia = PR_total_dia + PM_total_dia
 
 conf_dia = PM_Pos_dia + PR_Pos_dia
 
@@ -81,9 +87,6 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 from plotly import io
 
-# CSL = plt.imread('CSL LOGO.png')
-# .imread('https://scontent.ftru3-1.fna.fbcdn.net/v/t1.0-9/14729329_1222514917815216_3988353329269364560_n.png?_nc_cat=101&_nc_sid=85a577&_nc_eui2=AeF7tHM08ezc-oAQPZzRcAOxQKxrlWxLIK9ArGuVbEsgrxTwEGSgcEIRu012HBqxQdarfJvc5WkuhPAP0JFNH1F2&_nc_oc=AQmAZxIZlpF1cpws3MdmNA4h0NcYBMBN4zm5O2Pq14B0xydOWRckLyfdHOzO1RS8TdqnGKfBITxrOwZfdOVuRhQr&_nc_ht=scontent.ftru3-1.fna&oh=434b671dade264969e6ba79a35111d9f&oe=5EEB2722')
-
 # Grafica Principal Acum Contagiados, Activos, Recuperados vs tiempo
 fig = go.Figure()
 fig.add_trace(
@@ -98,25 +101,26 @@ fig.add_trace(
 fig.add_trace(
     go.Scatter(
         x=cuarentena[10:],
-        y=recup_cum[10:],
-        mode='lines+markers',
-        name='Recuperados'
-    )
-)
-fig.add_trace(
-    go.Scatter(
-        x=cuarentena[10:],
         y=act_cum[10:],
         mode='lines+markers',
         name='Activos'
     )
 )
+fig.add_trace(
+    go.Scatter(
+        x=cuarentena[10:],
+        y=recup_cum[10:],
+        mode='lines+markers',
+        name='Recuperados'
+    )
+)
+
 fig.update_layout(
     margin=dict(l=20, r=50, b=20, t=30),
-    title='Grafica de Casos Acumulados',
+    title='Casos Acumulados',
     )
 
-fig.write_html('grafica1.html', auto_open=True)
+# fig.write_html('grafica1.html', auto_open=True)
 io.write_json(fig, 'grafica1.json', pretty=True)
 fs.json_js(arch_json='grafica1.json', arch_js='grafica1.js', nombre='grafica1')
 
@@ -136,6 +140,43 @@ fig2.update_layout(
     title='Nuevos Casos Diarios',
     )
 
-fig2.write_html('grafica2.html', auto_open=True)
+# fig2.write_html('grafica2.html', auto_open=True)
 io.write_json(fig2, 'grafica2.json', pretty=True)
 fs.json_js(arch_json='grafica2.json', arch_js='grafica2.js', nombre='grafica2')
+
+# Grafica diaria pruebas nuevas vs dia cuarentena
+fig3 = go.Figure()
+fig3.add_trace(
+    go.Scatter(
+        x=cuarentena[10:],
+        y=Total_prueba_dia[10:],
+        mode='lines',
+        name='Total',
+        showlegend=True
+    )
+)
+fig3.add_trace(
+    go.Scatter(
+        x=cuarentena[10:],
+        y=PM_total_dia[10:],
+        mode='lines',
+        name='Moleculares',
+        showlegend=True
+    )
+)
+fig3.add_trace(
+    go.Scatter(
+        x=cuarentena[10:],
+        y=PR_total_dia[10:],
+        mode='lines',
+        name='P.Rápidas',
+        showlegend=True
+    )
+)
+fig3.update_layout(
+    margin=dict(l=20, r=20, b=20, t=30),
+    title='Nuevos Pruebas Diarias',
+)
+# fig3.write_html('grafica3.html', auto_open=True)
+io.write_json(fig3, 'grafica3.json', pretty=True)
+fs.json_js(arch_json='grafica3.json', arch_js='grafica3.js', nombre='grafica3')
