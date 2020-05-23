@@ -1,0 +1,60 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+div#general{
+    margin: auto;
+    width: 1366px;
+    height: 657px;
+    background-color: white;
+}
+
+.grid-container {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 43% 7% 7% 18% 25%;
+    grid-template-rows: 190px 233px 234px;
+    gap: 0px 0px;
+    grid-template-areas: "tabla logo logo tabla2 tabla2" "grafica1 grafica1 grafica2 grafica2 grafica3" "grafica1 grafica1 grafica4 grafica4 grafica5";
+}
+
+div#logo { 
+    grid-area: logo; 
+    background-color: black;
+}
+
+div#tabla { 
+    grid-area: tabla;
+    background-color: blue; 
+}
+
+.tabla2 { 
+    grid-area: tabla2;
+    background-color: green;  
+}
+
+div#grafica1 { 
+    grid-area: grafica1; 
+    background-color: cyan;  
+}
+
+div#grafica2 { 
+    grid-area: grafica2; 
+    background-color: red;  
+}
+
+.grafica3 { 
+    grid-area: grafica3; 
+    background-color: rgb(73, 143, 7);
+}
+
+.grafica4 { 
+    grid-area: grafica4;
+    background-color: blueviolet; 
+}
+
+.grafica5 { 
+    grid-area: grafica5; 
+    background-color: orange;  
+}

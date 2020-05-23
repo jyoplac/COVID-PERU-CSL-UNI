@@ -84,12 +84,8 @@ from plotly import io
 # CSL = plt.imread('CSL LOGO.png')
 # .imread('https://scontent.ftru3-1.fna.fbcdn.net/v/t1.0-9/14729329_1222514917815216_3988353329269364560_n.png?_nc_cat=101&_nc_sid=85a577&_nc_eui2=AeF7tHM08ezc-oAQPZzRcAOxQKxrlWxLIK9ArGuVbEsgrxTwEGSgcEIRu012HBqxQdarfJvc5WkuhPAP0JFNH1F2&_nc_oc=AQmAZxIZlpF1cpws3MdmNA4h0NcYBMBN4zm5O2Pq14B0xydOWRckLyfdHOzO1RS8TdqnGKfBITxrOwZfdOVuRhQr&_nc_ht=scontent.ftru3-1.fna&oh=434b671dade264969e6ba79a35111d9f&oe=5EEB2722')
 
-fig = make_subplots(rows=2, cols=3,
-                    column_widths=[0.4, 0.3, 0.3],
-                    row_heights=[0.5, 0.5],
-
-                    )
-
+# Grafica Principal Acum Contagiados, Activos, Recuperados vs tiempo
+fig = go.Figure()
 fig.add_trace(
     go.Scatter(
         x=cuarentena[10:],
@@ -97,8 +93,7 @@ fig.add_trace(
         mode='lines+markers',
         name='Contagiados',
         # showlegend= False
-    ),
-    1, 2
+    )
 )
 fig.add_trace(
     go.Scatter(
@@ -106,8 +101,7 @@ fig.add_trace(
         y=recup_cum[10:],
         mode='lines+markers',
         name='Recuperados'
-    ),
-    1, 2
+    )
 )
 fig.add_trace(
     go.Scatter(
@@ -115,32 +109,33 @@ fig.add_trace(
         y=act_cum[10:],
         mode='lines+markers',
         name='Activos'
-    ),
-    1, 2
+    )
 )
+fig.update_layout(
+    margin=dict(l=20, r=50, b=20, t=30),
+    title='Grafica de Casos Acumulados',
+    )
 
-fig.add_trace(
+fig.write_html('grafica1.html', auto_open=True)
+io.write_json(fig, 'grafica1.json', pretty=True)
+fs.json_js(arch_json='grafica1.json', arch_js='grafica1.js', nombre='grafica1')
+
+# Grafica diario nuevos contagiados vs cuarenten
+fig2 = go.Figure()
+fig2.add_trace(
     go.Scatter(
         x=cuarentena[10:],
         y=conf_dia[10:],
         mode='lines+markers',
-        name='Confirmados Diario'
-    ),
-    1, 3
+        name='Nuevos casos',
+        showlegend=False
+    )
 )
+fig2.update_layout(
+    margin=dict(l=20, r=20, b=20, t=30),
+    title='Nuevos Casos Diarios',
+    )
 
-
-# plt.plot(cuarentena[24:], r0)
-# plt.show()
-'''
-print(recup_dia[10:], act_cum[10:])
-plt.plot(cuarentena[10:], tasa_recup[10:])
-plt.show()
-
-print(r0)
-
-'''
-# fig = px.scatter(x=cuarentena, y=conf_cum)
-# fig.write_html('Conf_cum vs Cuarentena.html', auto_open=True)
-fig.write_html('index.html', auto_open=True)
-io.write_json(fig, 'prueba.json', pretty=True)
+fig2.write_html('grafica2.html', auto_open=True)
+io.write_json(fig2, 'grafica2.json', pretty=True)
+fs.json_js(arch_json='grafica2.json', arch_js='grafica2.js', nombre='grafica2')
