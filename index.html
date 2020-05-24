@@ -16,9 +16,99 @@
                     <img src="./CSL LOGO.png" ; style="width: 190px;">
                 </div>
 
-                <div class="tabla1"></div>
-                <div class="tabla2"></div>
-                <div class="tabla3"></div>
+                <div id="tabla1"; class="plotly-graph-div">
+                    <script type="text/javascript" src="tabla1.js"></script>
+                    <script type="text/javascript">
+                        (function(){
+                            window.PLOTLYENV={'BASE_URL': 'https://plotly.com'};
+                            var gd = document.getElementById('tabla1')
+                            var resizeDebounce = null;
+                            function resizePlot() {
+                                var bb = gd.getBoundingClientRect();
+                                Plotly.relayout(gd, {
+                                    width: bb.width,
+                                    height: bb.height
+                                });
+                            }
+                            window.addEventListener('resize', function() {
+                                if (resizeDebounce) {
+                                    window.clearTimeout(resizeDebounce);
+                                }
+                                resizeDebounce = window.setTimeout(resizePlot, 100);
+                            });
+                            Plotly.plot(gd,  {
+                                data: tabla1.data,
+                                layout: tabla1.layout,
+                                frames: tabla1.frames,
+                                config: {displayModeBar: false}
+                            });
+                            
+                        }());
+                    </script>
+                </div>
+
+                <div id="tabla2";  class="plotly-graph-div">
+                    <script type="text/javascript" src="tabla2.js"></script>
+                    <script type="text/javascript">
+                        (function(){
+                            window.PLOTLYENV={'BASE_URL': 'https://plotly.com'};
+                            var gd = document.getElementById('tabla2')
+                            var resizeDebounce = null;
+                            function resizePlot() {
+                                var bb = gd.getBoundingClientRect();
+                                Plotly.relayout(gd, {
+                                    width: bb.width,
+                                    height: bb.height
+                                });
+                            }
+                            window.addEventListener('resize', function() {
+                                if (resizeDebounce) {
+                                    window.clearTimeout(resizeDebounce);
+                                }
+                                resizeDebounce = window.setTimeout(resizePlot, 100);
+                            });
+                            Plotly.plot(gd,  {
+                                data: tabla2.data,
+                                layout: tabla2.layout,
+                                frames: tabla2.frames,
+                                config: {displayModeBar: false}
+                            });
+                            
+                        }());
+                    </script>
+                </div>
+
+                <div id="tabla3";  class="plotly-graph-div">
+                    <script type="text/javascript" src="tabla3.js"></script>
+                    <script type="text/javascript">
+                        (function(){
+                            window.PLOTLYENV={'BASE_URL': 'https://plotly.com'};
+                            var gd = document.getElementById('tabla3')
+                            var resizeDebounce = null;
+                            function resizePlot() {
+                                var bb = gd.getBoundingClientRect();
+                                Plotly.relayout(gd, {
+                                    width: bb.width,
+                                    height: bb.height
+                                });
+                            }
+                            window.addEventListener('resize', function() {
+                                if (resizeDebounce) {
+                                    window.clearTimeout(resizeDebounce);
+                                }
+                                resizeDebounce = window.setTimeout(resizePlot, 100);
+                            });
+                            Plotly.plot(gd,  {
+                                data: tabla3.data,
+                                layout: tabla3.layout,
+                                frames: tabla3.frames,
+                                config: {displayModeBar: false}
+                            });
+                            
+                        }());
+                    </script>
+                </div>
+
                 <div id="grafica1" ;class="plotly-graph-div" >
                     <script type="text/javascript" src="grafica1.js"></script>
                     <script type="text/javascript">

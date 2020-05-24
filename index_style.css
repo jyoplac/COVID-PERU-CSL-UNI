@@ -24,17 +24,17 @@ div#logo {
     background-color: rgb(17, 17, 17);
 }
 
-.tabla1 { 
+div#tabla1 { 
     grid-area: tabla1;
     background-color: blue; 
 }
 
-.tabla2 { 
+div#tabla2 { 
     grid-area: tabla2;
     background-color: green;  
 }
 
-.tabla3 { 
+div#tabla3 { 
     grid-area: tabla3;
     background-color: blueviolet; 
 }
