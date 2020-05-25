@@ -213,7 +213,7 @@ fs.json_js(arch_json='tabla1.json', arch_js='tabla1.js', nombre='tabla1')
 # tabla 2
 import statistics as st
 aux_mue = st.mean(Total_prueba_dia[-8:-1])
-aux_por = round(st.mean(por_pos[-8:-1]),)
+aux_por = round(st.mean(por_pos[-8:-1]), 2)
 aux_rec = st.mean(recup_dia[-8:-1])
 aux_fall = st.mean(fall_dia[-8:-1])
 tabla2 = [
@@ -239,9 +239,9 @@ fs.json_js(arch_json='tabla2.json', arch_js='tabla2.js', nombre='tabla2')
 # tabla 3
 aux_dia = str(1 + cuarentena[-1])
 aux_2 = 'Día ' + aux_dia + ' de cuarentena'
-aux_fec = '24-may'
-aux_pro_con = '121723'+' ± '+'0.914'+'%'
-aux_pro_recup = '51949'+' ± '+'2.057'+'%'
+aux_fec = '25-may'
+aux_pro_con = '125697'+' ± '+'0.904'+'%'
+aux_pro_recup = '52267'+' ± '+'2.063'+'%'
 tabla3 = [
     ['Pronóstico', 'Fecha', 'Contagiados', 'Recuperados'],
     [aux_2, aux_fec, aux_pro_con, aux_pro_recup]
