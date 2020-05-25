@@ -1,55 +1,55 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+	margin: 0px;
+	padding: 0px;
 }
 
-div#general{
-    margin: auto;
-    width: 1366px;
-    height: 657px;
-    background-color: white;
+div#general {
+	margin: auto;
+	width: 1366px;
+	height: 657px;
+	background-color: white;
 }
 
 .grid-container {
-    display: grid;
-    margin: auto;
-    grid-template-columns: 30% 20% 10% 15% 25%;
-    grid-template-rows: 190px 233px 234px;
-    gap: 0px 0px;
-    grid-template-areas: "tabla1 tabla2 tabla2 logo tabla3" "grafica1 grafica1 grafica2 grafica2 grafica2" "grafica1 grafica1 grafica3 grafica3 grafica3";
+	display: grid;
+	margin: auto;
+	grid-template-columns: 30% 20% 10% 15% 25%;
+	grid-template-rows: 190px 233px 234px;
+	gap: 0px 0px;
+	grid-template-areas: 'tabla1 tabla2 tabla2 logo tabla3' 'grafica1 grafica1 grafica2 grafica2 grafica2' 'grafica1 grafica1 grafica3 grafica3 grafica3';
 }
 
-div#logo { 
-    grid-area: logo; 
-    background-color: rgb(17, 17, 17);
+div#logo {
+	grid-area: logo;
+	background-color: rgb(17, 17, 17);
 }
 
-div#tabla1 { 
-    grid-area: tabla1;
-    background-color: blue; 
+div#tabla1 {
+	grid-area: tabla1;
+	background-color: blue;
 }
 
-div#tabla2 { 
-    grid-area: tabla2;
-    background-color: green;  
+div#tabla2 {
+	grid-area: tabla2;
+	background-color: green;
 }
 
-div#tabla3 { 
-    grid-area: tabla3;
-    background-color: blueviolet; 
+div#tabla3 {
+	grid-area: tabla3;
+	background-color: blueviolet;
 }
 
-div#grafica1 { 
-    grid-area: grafica1; 
-    background-color: cyan;  
+div#grafica1 {
+	grid-area: grafica1;
+	background-color: cyan;
 }
 
-div#grafica2 { 
-    grid-area: grafica2; 
-    background-color: red;  
+div#grafica2 {
+	grid-area: grafica2;
+	background-color: red;
 }
 
-div#grafica3 { 
-    grid-area: grafica3; 
-    background-color: rgb(73, 143, 7);
+div#grafica3 {
+	grid-area: grafica3;
+	background-color: rgb(73, 143, 7);
 }
