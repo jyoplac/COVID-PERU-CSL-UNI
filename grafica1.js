@@ -1,7 +1,7 @@
 var grafica1 = {
   "data": [
     {
-      "mode": "lines+markers",
+      "mode": "lines",
       "name": "Contagiados",
       "type": "scatter",
       "x": [
@@ -154,7 +154,7 @@ var grafica1 = {
       ]
     },
     {
-      "mode": "lines+markers",
+      "mode": "lines",
       "name": "Activos",
       "type": "scatter",
       "x": [
@@ -307,7 +307,7 @@ var grafica1 = {
       ]
     },
     {
-      "mode": "lines+markers",
+      "mode": "lines",
       "name": "Recuperados",
       "type": "scatter",
       "x": [

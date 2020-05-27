@@ -1,7 +1,7 @@
 var grafica2 = {
   "data": [
     {
-      "mode": "lines+markers",
+      "mode": "lines",
       "name": "Nuevos casos",
       "showlegend": false,
       "type": "scatter",

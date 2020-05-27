@@ -99,7 +99,7 @@ fig.add_trace(
     go.Scatter(
         x=cuarentena[10:],
         y=conf_cum[10:],
-        mode='lines+markers',
+        mode='lines',
         name='Contagiados',
         # showlegend= False
     )
@@ -108,7 +108,7 @@ fig.add_trace(
     go.Scatter(
         x=cuarentena[10:],
         y=act_cum[10:],
-        mode='lines+markers',
+        mode='lines',
         name='Activos'
     )
 )
@@ -116,7 +116,7 @@ fig.add_trace(
     go.Scatter(
         x=cuarentena[10:],
         y=recup_cum[10:],
-        mode='lines+markers',
+        mode='lines',
         name='Recuperados'
     )
 )
@@ -136,7 +136,7 @@ fig2.add_trace(
     go.Scatter(
         x=cuarentena[10:],
         y=conf_dia[10:],
-        mode='lines+markers',
+        mode='lines',
         name='Nuevos casos',
         showlegend=False
     )
