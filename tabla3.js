@@ -10,10 +10,10 @@ var tabla3 = {
             "Recuperados"
           ],
           [
-            "D\u00eda 85 de cuarentena",
-            "08-jun",
-            "198648 \u00b1 0.604%",
-            "89743 \u00b1 1.605%"
+            "D\u00eda 86 de cuarentena",
+            "09-jun",
+            "201137 \u00b1 0.586%",
+            "93327 \u00b1 1.526%"
           ]
         ]
       },
