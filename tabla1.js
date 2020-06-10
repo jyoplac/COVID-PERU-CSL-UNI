@@ -11,11 +11,11 @@ var tabla1 = {
             "Fallecidos"
           ],
           [
-            "D\u00eda 86 de cuarentena",
-            "09-jun",
-            203736,
-            "92929",
-            "5738"
+            "D\u00eda 87 de cuarentena",
+            "10-jun",
+            208823,
+            "98031",
+            "5903"
           ]
         ]
       },
