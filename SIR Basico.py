@@ -239,9 +239,9 @@ fs.json_js(arch_json='tabla2.json', arch_js='tabla2.js', nombre='tabla2')
 # tabla 3
 aux_dia = str(1 + cuarentena[-1])
 aux_2 = 'Día ' + aux_dia + ' de cuarentena'
-aux_fec = '30-jun'
-aux_pro_con = '287300'+' ± '+'0.407'+'%'
-aux_pro_recup = '176156'+' ± '+'1.029'+'%'
+aux_fec = '01-jul'
+aux_pro_con = '290027'+' ± '+'0.406'+'%'
+aux_pro_recup = '179399'+' ± '+'1.016'+'%'
 tabla3 = [
     ['Pronóstico', 'Fecha', 'Contagiados', 'Recuperados'],
     [aux_2, aux_fec, aux_pro_con, aux_pro_recup]
